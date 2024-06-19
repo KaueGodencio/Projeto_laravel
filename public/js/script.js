@@ -1,1 +1,1 @@
-/* console.log("esta ok funcopnando") */
+console.log("esta ok funcionando") 
