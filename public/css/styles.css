@@ -1,5 +1,69 @@
+/* Geral */
 * {
     font-family: 'Roboto';
 
 }
+body{
+    min-height: 100vh;
+    padding-bottom: 100px;
+    position: relative;
+
+}
+
+header{
+    background-color: #FFF;
+    border-bottom: 1px solid #CCC;
+}
+
+.row{
+    margin: 0;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+
+.nav-item :hover{
+    color:#007bff !important;
+}
+
+/* Seach Container */
+#search-container{
+    background-image:url("../img/female-florist-using-laptop-work.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    padding: 50px;
+    text-align: center;
+    flex-direction: column;
+
+}
+#search-container h1{
+    font-weight: 800;
+}
+#search-container form{
+   width: 50%;
+   margin: 0 auto;
+}
+
+.card{
+    border-radius: 10px;
+
+}
+.card img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+footer{
+    width: 100%;
+    background-color: #353E48;
+    color: #fff;
+    padding:30px;
+    text-align: center;
+    bottom: 0;
+    position: absolute;
+}
+
 

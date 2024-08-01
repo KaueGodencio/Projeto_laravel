@@ -21,8 +21,8 @@
 </head>
 
 <body>
-    <header class="border ">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light container">
+    <header >
+        <nav class="navbar navbar-expand-lg navbar-light container">
             <a class="navbar-brand" href="#">LOGO</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -37,12 +37,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/events/create">Criar Eventos</a>
                     </li>
-                    <li class="nav-item">
+                <!--     <li class="nav-item">
                         <a class="nav-link" href="/contatos/contact">Contatos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/produtos/product">Produtos</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="/">Entrar</a>
                     </li>
