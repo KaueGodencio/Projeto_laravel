@@ -15,13 +15,12 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('city');
+            $table->boolean('private');
+            $table->text('description');
+            $table->string('image')->nullable(); // Certifique-se de que 'nullable' está definido aqui
             $table->timestamps();
-            $table->string("title");
-            $table->text("description");
-            $table->string("city");
-            $table->boolean("private");
-            
-
         });
     }
 

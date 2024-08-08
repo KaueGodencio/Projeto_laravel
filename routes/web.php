@@ -19,10 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [EventController::class,'index']);
 Route::get('/events/create', [EventController::class,'create']);
+Route::get('/events/{id}', [EventController::class,'show']);
 Route::post('/events', [EventController::class,'store']);
 
-Route::get('/contatos/contact', [EventController::class,'contact']);
-Route::get('/produtos/product', [EventController::class,'product']);
+
 
 
 /* Route::get('/contact', function () {

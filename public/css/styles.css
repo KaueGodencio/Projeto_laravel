@@ -61,6 +61,19 @@ header{
 
 }
 
+
+
+.msg{
+    background-color: #D4EDDA;
+    color: #155724;
+    border: 1px solid #C3E6BC;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+
+}
+
 footer{
     width: 100%;
     background-color: #353E48;

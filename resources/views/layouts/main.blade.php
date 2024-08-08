@@ -14,6 +14,9 @@
     <!-- CSS Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- Css aplicação  -->
+
+
+
     <link href="/css/styles.css" rel="stylesheet">
     <script src="/js/script.js"></script>
 
@@ -64,12 +67,19 @@
 
             </div>
         </nav>
-
-
-
     </header>
+    <div class="container-fluid">
+        <div class="row">
+            @if(session('msg'))
+            <p class="msg">{{session('msg')}}</p>
+            @endif
+        @yield('content')
 
-    @yield('content')
+        </div>
+
+    </div>
+
+   
 
 
 
