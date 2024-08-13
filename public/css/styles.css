@@ -30,10 +30,10 @@ header{
 
 /* Seach Container */
 #search-container{
-    background-image:url("../img/female-florist-using-laptop-work.jpg");
+    background-image:url("https://media.istockphoto.com/id/1069371240/pt/foto/rear-view-of-people-sitting-in-auditorium-during-seminar.jpg?s=2048x2048&w=is&k=20&c=4wUBqMfuCUxx38mRP1R8PdSMuQ7FA8--SjTPKoDV5tM=");
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 600px;
     padding: 50px;
     text-align: center;
     flex-direction: column;
