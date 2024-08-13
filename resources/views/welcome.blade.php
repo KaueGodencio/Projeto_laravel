@@ -18,7 +18,7 @@
         <p>Veja os eventos dos proximos dias </p>
         <div id="card-container" class="row ">
             @foreach($events as $event)
-                <div class=" col-md-3  ">
+                <div class=" col-md-4 col-lg-3  ">
                     <div class="card border mb-2">
                         <img src="/img/events/{{$event->image}}" width="100%" alt="{{$event->title}}">
                         <div class="card-body">
