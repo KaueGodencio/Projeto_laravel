@@ -12,22 +12,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
 
     <!-- CSS Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- Css aplicação  -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    </head>
 
 
 
     <link href="/css/styles.css" rel="stylesheet">
     <script src="/js/script.js"></script>
-
+    
 
 </head>
 
 <body>
-    <header >
+    <header>
         <nav class="navbar navbar-expand-lg navbar-light container">
             <a class="navbar-brand" href="#">LOGO</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -40,7 +45,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/events/create">Criar Eventos</a>
                     </li>
-                <!--     <li class="nav-item">
+                    <!--     <li class="nav-item">
                         <a class="nav-link" href="/contatos/contact">Contatos</a>
                     </li>
                     <li class="nav-item">
@@ -52,7 +57,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">Cadastrar</a>
                     </li>
-                  <!--   <li class="nav-item dropdown">
+                    <!--   <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                             Dropdown
                         </a>
@@ -71,15 +76,15 @@
     <div class="container-fluid">
         <div class="row">
             @if(session('msg'))
-            <p class="msg">{{session('msg')}}</p>
+                <p class="msg">{{session('msg')}}</p>
             @endif
-        @yield('content')
+            @yield('content')
 
         </div>
 
     </div>
 
-   
+
 
 
 
@@ -88,12 +93,13 @@
         <p>HDC Events &copy; 2024</p>
     </footer>
 
-   
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"   crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    <script  type = "módulo"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" > </script> 
-    <script  nomodule  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" > </script>
+    <script type="módulo" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"> </script>
 
 
 </body>
