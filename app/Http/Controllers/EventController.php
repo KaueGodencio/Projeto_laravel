@@ -8,11 +8,20 @@ use App\Models\Event;
 
 class EventController extends Controller
 {
-    public function index()
-    {
-        $events = Event::all();
-      
-        return view('welcome', ['events'=>$events]);
+    public function index() {
+       
+        $search = request('search');
+    
+        if ($search) {
+            // Busca os eventos que correspondem ao título
+            $events = Event::where('title',  'like', '%' . $search . '%')->get();
+        } else {
+            // Caso não haja busca, obtém todos os eventos
+            $events = Event::all();
+        }
+    
+        // Retorna a view 'welcome' com os eventos e o termo de busca
+        return view('welcome', ['events' => $events, 'search' => $search]);
     }
 
 

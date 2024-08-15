@@ -22,8 +22,7 @@
         </div>
 
         <div class="form-group d-flex flex-column">
-            <label for="date"> Data do Evento:</label>
-        
+            <label for="date"> Data do Evento:</label>        
             <input type="date" name="date" id="date" class="form-control">
             
         </div>

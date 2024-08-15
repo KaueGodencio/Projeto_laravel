@@ -34,7 +34,6 @@ header{
     background-size: cover;
     background-position: center;
     height: 600px;
-    padding: 50px;
     text-align: center;
     flex-direction: column;
 
@@ -43,7 +42,7 @@ header{
     font-weight: 800;
 }
 #search-container form{
-   width: 50%;
+  
    margin: 0 auto;
 }
 
