@@ -17,13 +17,13 @@
     <!-- Css aplicação  -->
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
-    </head>
+</head>
 
 
 
-    <link href="/css/styles.css" rel="stylesheet">
-    <script src="/js/script.js"></script>
-    
+<link href="/css/styles.css" rel="stylesheet">
+<script src="/js/script.js"></script>
+
 
 </head>
 
@@ -51,12 +51,28 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/produtos/product">Produtos</a>
                     </li> -->
+                    @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Entrar</a>
+                        <a class="nav-link" href="/dashboard">Meus Eventos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Cadastrar</a>
+                        <form action="/logout" method="POST">
+                            @csrf
+                            <a class="nav-link" href="/logout" onclick="event.preventDefault()
+                            this.closest('form').submit();">Sair</a>
+
+
+                        </form>
                     </li>
+                    @endauth
+                    @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Entrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Cadastrar</a>
+                    </li>
+                    @endguest
                     <!--   <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                             Dropdown
@@ -76,7 +92,7 @@
     <div class="container-fluid">
         <div class="row">
             @if(session('msg'))
-                <p class="msg">{{session('msg')}}</p>
+            <p class="msg">{{session('msg')}}</p>
             @endif
             @yield('content')
 
@@ -95,7 +111,7 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"   crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     <script type="módulo" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>

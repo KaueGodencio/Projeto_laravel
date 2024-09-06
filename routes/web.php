@@ -41,3 +41,12 @@ Route::get('/produto_testes/{id?}', function ($id = null) {
     return view('produto', ['id' => $id]);
 });
  */
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
