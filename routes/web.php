@@ -18,30 +18,14 @@ use Illuminate\Support\Facades\Route;
 /* criando uma nova rota do verbo "GET" estou recebendo dados onde eu acesso a URL /contact e vou ter  volta um arquivo de blade.php que tem HTML com PHP */
 
 Route::get('/', [EventController::class,'index']);
-Route::get('/events/create', [EventController::class,'create']);
+Route::get('/events/create', [EventController::class,'create'])->middleware('auth');
 Route::get('/events/{id}', [EventController::class,'show']);
 Route::post('/events', [EventController::class,'store']);
 
+Route::get('/dashboard', [EventController::class,'dashboard'])->middleware('auth');
 
 
-
-/* Route::get('/contact', function () {
-    return view('contact');
-});
-
-
-Route::get('/produtos', function () {
-    $busca = request('search');
-    return view('produtos', ['busca' => $busca]);
-});
-
-
-
-Route::get('/produto_testes/{id?}', function ($id = null) {
-    return view('produto', ['id' => $id]);
-});
- */
-Route::middleware([
+/* Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
@@ -49,4 +33,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-});
+}); */
+
+
+
+
+
