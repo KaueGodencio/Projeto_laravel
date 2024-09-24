@@ -55,9 +55,11 @@
         @endif
 
         <div id="card-container" class="row ">
+            
+
             @foreach($events as $event)
                 <div class="col-12 col-md-6 col-lg-3  ">
-                    <div class="card-person card card_event border mb-2">
+                    <div class="card-person card card_event border mb-4">
 
                         <img src="/img/events/{{$event->image}}" width="100%" height="180px" alt="{{$event->title}}">
                         <div class="card-body">
