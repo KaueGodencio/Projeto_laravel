@@ -1,8 +1,35 @@
 /* Geral */
 * {
-    font-family: 'Roboto';
+    font-family: "Poppins-Medium";
 
 }
+
+
+@font-face {
+    font-family: "Poppins-Medium";
+    src: url(../fonts/Poppins-Medium.ttf);
+}
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url(../fonts/Poppins-Bold.ttf);
+}
+@font-face {
+    font-family: "Poppins-SemiBold";
+    src: url(../fonts/Poppins-SemiBold.ttf);
+}
+
+.font-poppis-medium {
+    font-family: "Poppins-Medium";
+}
+
+.font-poppis-semi-bold {
+    font-family: "Poppins-SemiBold";
+}
+
+.font-poppis-bold {
+    font-family: "Poppins-Bold";
+}
+
 body{
     min-height: 100vh;
     padding-bottom: 100px;
