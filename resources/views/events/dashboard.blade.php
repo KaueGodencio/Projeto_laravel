@@ -36,7 +36,7 @@
                     <td>0</td>
                     <td class="d-flex">
 
-                        <a class="text-primary btn-info edit-btn mr-2"  href="#">
+                        <a  href="/events/edit/{{$event->id}}" class="text-primary  edit-btn mr-2" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                 fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                 <path
@@ -51,7 +51,7 @@
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" class="text-danger delete-btn ">
+                            <button type="submit" class="text-danger delete-btn border-0 ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20"
                                 height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                 <path
