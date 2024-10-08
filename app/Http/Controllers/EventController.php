@@ -85,15 +85,21 @@ class EventController extends Controller
         
     }
 
-    public function dashboard(){
-        $user = auth()->user();
+    public function dashboard()
+{
+    $user = auth()->user();
 
-        $events = $user->events;
+    // Eventos criados pelo usuário
+    $events = $user->events;
 
-        return view ('events.dashboard', ['events' => $events]);
+    // Eventos que o usuário está participando
+    $eventsAsParticipant = $user->eventsAsParticipant;
 
-
-    }
+    return view('events.dashboard', [
+        'events' => $events,
+        'eventsAsParticipant' => $eventsAsParticipant
+    ]);
+}
 
     public function destroy($id){
         Event::findOrFail($id)->delete();
@@ -102,7 +108,17 @@ class EventController extends Controller
     }
 
     public function edit($id) {
+
+        $user = auth()->user();
+
         $event = Event::findOrFail($id);
+
+        
+        if($user->id != $event->user_id){
+            return redirect('/dashboard');
+        }
+
+
         return view('events.edit', ['event' => $event]);
     }
 
@@ -114,5 +130,28 @@ class EventController extends Controller
         return redirect('/dashboard')->with('msg','Evento editado com sucesso!');
 
     }
+
+
+
+
+public function joinEvent($id)
+{
+    $user = auth()->user(); // Obtém o usuário autenticado
+    $event = Event::findOrFail($id); // Encontra o evento
+
+    // Verifica se o usuário já está participando do evento
+    if (!$event->users->contains($user->id)) {
+        // Associa o usuário ao evento
+        $event->users()->attach($user->id);
+    }
+
+    // Redireciona para a dashboard após a confirmação da presença
+    return redirect('/dashboard')->with('message', 'Sua presença foi confirmada no evento');
+} 
+
+
+    
+
+
   
 }

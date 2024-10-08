@@ -33,7 +33,7 @@
                 <tr>
                     <td scope="row">{{$loop->index + 1}}</td>
                     <td><a href="events/{{$event->id}}">{{$event->title}}</a></td>
-                    <td>0</td>
+                    <td>{{count($event->users)}}</td>
                     <td class="d-flex">
 
                         <a  href="/events/edit/{{$event->id}}" class="text-primary  edit-btn mr-2" >
@@ -77,11 +77,61 @@
         @else
         <p>Voce não possui eventos cadastrados <a href="/events/create"> Criar evento</a></p>
         @endif
-
-
-
     </div>
+    <div class="col-md-12  dashboard-title-container">
+        <h1> Eventos que estou participando</h1>
+    </div>
+    <div class="col-md-12  dashboard-title-container">
+
+    @if (session('message'))
+    <div class="alert alert-success w-100">
+        {{ session('message' ) }}
+
+      
+    </div>
+        @if (count($eventsAsParticipant )> 0):
+            <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Participantes</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach ($eventsAsParticipant as $event)
+                <tr>
+                    <td scope="row">{{$loop->index + 1}}</td>
+                    <td><a href="events/{{$event->id}}">{{$event->title}}</a></td>
+                    <td>{{count($event->users)}}</td>
+                    <td>
+                        <a href="#">Sair</a>
+                    </td>
+                  
+
+                </tr>
+
+                @endforeach
+            </tbody>
+
+        </table>
+
+        @else
+        <p>Você ainda não esta participando de nenhum evento, <a href="/">veja todos os eventos</a></p>
+        
+        @endif
+   
+    </div>
+
+
+
 
 </div>
 
+
+@endif
+
 @endsection
+
