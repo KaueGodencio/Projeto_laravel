@@ -54,9 +54,6 @@
                 <label for="title">Adicione itens de infraestrutura:</label>
 
                 <div class="col-12">
-
-
-
                     <div class="form-group">
                         <input class="form-check-input" name="items[]" type="checkbox" value="Cadeiras">Cadeiras
                     </div>
