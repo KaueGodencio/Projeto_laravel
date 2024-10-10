@@ -80,12 +80,36 @@ class EventController extends Controller
 
     public function show($id)
     {
+        // Obtém o evento, ou lança um erro se não for encontrado
         $event = Event::findOrFail($id);
-
+    
+        // Obtém o usuário autenticado
+        $user = auth()->user();
+        $hasUserJoined = false;
+    
+        if ($user) {
+            // Verifica se o relacionamento "eventsAsParticipant" existe e não é null
+            if ($user->eventsAsParticipant) {
+                $userEvents = $user->eventsAsParticipant->toArray();
+    
+                // Verifica se o usuário já participa do evento
+                foreach ($userEvents as $userEvent) {
+                    if ($userEvent['id'] == $id) {
+                        $hasUserJoined = true;
+                    }
+                }
+            }
+        }
+    
+        // Obtém o proprietário do evento
         $eventOwner = User::where('id', '=', $event->user_id)->first()->toArray();
-
-        return view('events.show', ['event' => $event, 'eventOwner' => $eventOwner]);
-
+    
+        // Retorna a view com os dados do evento, proprietário e se o usuário está participando
+        return view('events.show', [
+            'event' => $event,
+            'eventOwner' => $eventOwner,
+            'hasUserJoined' => $hasUserJoined,
+        ]);
     }
 
     public function dashboard()
@@ -105,7 +129,7 @@ class EventController extends Controller
     }
 
 
-    
+
 
 
 
@@ -158,7 +182,22 @@ class EventController extends Controller
         }
 
         // Redireciona para a dashboard após a confirmação da presença
-        return redirect('/dashboard')->with('message', 'Sua presença foi confirmada no evento');
+        return redirect('/dashboard')->with('message', 'Sua presença foi confirmada no evento ' . $event->title);
+    }
+
+
+    public function leaveEvent($id)
+    {
+
+        $user = auth()->user(); // Obtém o usuário autenticado
+
+        $user->eventsAsParticipant()->detach($user->id);
+
+        $event = Event::findOrFail($id); // Encontra o evento
+
+        return redirect('/dashboard')->with('message', 'Você saiu com sucesso do evento');
+
+
     }
 
 

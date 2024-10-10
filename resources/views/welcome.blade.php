@@ -44,6 +44,7 @@
 
 
         @else
+        
             <h1 class="mt-3 ">Proximos Evento</h1>
             <p>Veja os eventos dos proximos dias </p>
         @endif
