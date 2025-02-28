@@ -1,7 +1,7 @@
 # Projeto em Laravel
 
 ## Requisitos
-Certifique-se de ter os seguintes requisitos instalados:
+Certifique-se de ter os seguintes requisitos instalados:https://github.com/KaueGodencio
 - Composer
 - MySQL ou PostgreSQL (ou outro banco de dados suportado)
 - Node.js e NPM (se usar Vite ou frontend com JavaScript)
@@ -10,12 +10,11 @@ Certifique-se de ter os seguintes requisitos instalados:
 
 1. **Clone o repositório**
    ```bash
-   git clone https://github.com/seu-usuario/seu-projeto.git
-   cd seu-projeto
-   ```
-
+   git clone https://github.com/KaueGodencio/Projeto_laravel.git
+   
+  
 2. **Instale as dependências**
-   ```bash
+   
    composer install
    ```
 
@@ -40,23 +39,6 @@ Certifique-se de ter os seguintes requisitos instalados:
    ```bash
    php artisan serve
    ```
-   O projeto estará rodando em: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+  
 
-## Comandos Adicionais
-- Se o projeto usa NPM/Vite:
-  ```bash
-  npm install
-  npm run dev
-  ```
-- Se precisar rodar filas:
-  ```bash
-  php artisan queue:work
-  ```
-- Se houver erro de permissão:
-  ```bash
-  chmod -R 777 storage bootstrap/cache
-  ```
-
----
-Se precisar de mais informações, consulte a [documentação do Laravel](https://laravel.com/docs).
 
